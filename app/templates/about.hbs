@@ -17,31 +17,31 @@
         {{#paper-card class="flex-100"}}
 
           {{#paper-list class="layout-column flex-100"}}
-            {{#paper-item class="md-2-line layout-column"}}
-              {{#paper-button onClick=(action (transition-to 'about.me')) class="layout-column"}}Brief Bio{{/paper-button}}
+            {{#paper-item class="md-2-line layout-column menu-item"}}
+              {{#paper-button onClick=(action (transition-to 'about.me')) class="layout-column menu-btn"}}Brief Bio{{/paper-button}}
             {{/paper-item}}
-            {{#paper-item canExpand=true expanded=subMenuOpen onClick=(queue (transition-to 'about.projects.enterprise') (action (toggle 'subMenuOpen' this))) class="layout-column md-2-line"}}
-              {{#paper-button }}Projects I've Worked On{{/paper-button}}
+            {{#paper-item canExpand=true expanded=subMenuOpen onClick=(queue (transition-to 'about.projects.enterprise') (action (toggle 'subMenuOpen' this))) class="layout-column md-2-line menu-item"}}
+              {{#paper-button class="menu-btn"}}Projects I've Worked On{{/paper-button}}
             {{/paper-item}}
             {{#if subMenuOpen}}
-               {{#paper-item onClick=(action (transition-to 'about.projects.enterprise')) class=(concat "submenu-item" (if active ' active') ' md-2-line') }}
-                {{#paper-button class='md-button md-button--sub'}}Enterprise Portal{{/paper-button}}
+               {{#paper-item onClick=(action (transition-to 'about.projects.enterprise')) class=(concat "submenu-item" (if active ' active') ' md-2-line menu-item') }}
+                {{#paper-button class='md-button md-button--sub menu-btn'}}Enterprise Portal{{/paper-button}}
                {{/paper-item}}
-               {{#paper-item onClick=(action (transition-to 'about.projects.dev-portal')) class=(concat "submenu-item" (if active ' active') ' md-2-line') }}
-                {{#paper-button class='md-button md-button--sub'}}Developer Portal{{/paper-button}}
+               {{#paper-item onClick=(action (transition-to 'about.projects.dev-portal')) class=(concat "submenu-item" (if active ' active') ' md-2-line menu-item') }}
+                {{#paper-button class='md-button md-button--sub menu-btn'}}Developer Portal{{/paper-button}}
                {{/paper-item}}
-               {{#paper-item onClick=(action (transition-to 'about.projects.my-vinli')) class=(concat "submenu-item" (if active ' active') ' md-2-line') }}
-                {{#paper-button class='md-button md-button--sub'}}My Vinli{{/paper-button}}
+               {{#paper-item onClick=(action (transition-to 'about.projects.my-vinli')) class=(concat "submenu-item" (if active ' active') ' md-2-line menu-item') }}
+                {{#paper-button class='md-button md-button--sub menu-btn'}}My Vinli{{/paper-button}}
                {{/paper-item}}
             {{/if}}
-            {{#paper-item class="md-2-line layout-column"}}
-              {{#paper-button onClick=(action (transition-to 'about.skills')) id="skills" class="layout-column"}}Skills{{/paper-button}}
+            {{#paper-item class="md-2-line layout-column menu-item"}}
+              {{#paper-button onClick=(action (transition-to 'about.skills')) id="skills" class="layout-column menu-btn"}}Skills{{/paper-button}}
             {{/paper-item}}
-            {{#paper-item class="md-2-line layout-column"}}
-              {{#paper-button onClick=(action (transition-to 'about.books'))}}Books I'm reading{{/paper-button}}
+            {{#paper-item class="md-2-line layout-column menu-item"}}
+              {{#paper-button onClick=(action (transition-to 'about.books')) class="menu-btn"}}Books I'm reading{{/paper-button}}
             {{/paper-item}}
-            {{#paper-item class="md-2-line layout-column"}}
-              {{#paper-button onClick=(action (transition-to 'about.contact'))}}Contact Me{{/paper-button}}
+            {{#paper-item class="md-2-line layout-column menu-btn__wrapper"}}
+              {{#paper-button onClick=(action (transition-to 'about.contact')) class="menu-btn"}}Contact Me{{/paper-button}}
             {{/paper-item}}
 
           {{/paper-list}}

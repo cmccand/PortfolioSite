@@ -5,35 +5,20 @@
 @import 'colors';
 
 $base-padding: 1em;
-$header-font: 'Josefin Slab', serif;
-$secondary-font: 'Open Sans', sans-serif;
-$secondary-font-condensed: 'Open Sans Condensed', sans-serif;
+/* $header-font: 'Josefin Slab', serif; */
+/* $secondary-font: 'Open Sans', sans-serif;
+$secondary-font-condensed: 'Open Sans Condensed', sans-serif; */
+$space-mono: 'Space Mono', monospace;
+$asul: 'Asul', sans-serif;
+$work-sans: 'Work-Sans', sans-serif;
 
-/* .owl-carousel {
-    margin-bottom: 1em;
-    .owl-stage-outer {
-      .owl-stage {
-        display: block;
-        .owl-item {
-          display:block;
-        }
-        .session__item {
-          text-align: center;
-          display: block;
-          max-height: 350px;
-        }
-        .session__action {
-          left: 50%;
-          transform: translate(-50%, 15px);
-        }
-      }
-    }
-  } */
+
 .screenshot-card {
   width: 55%;
   text-align: center;
   margin: 0 auto;
 }
+
 .owl-carousel {
   .owl-item {
     img {
@@ -42,7 +27,6 @@ $secondary-font-condensed: 'Open Sans Condensed', sans-serif;
     }
   }
 }
-
 
 * {
   box-sizing: border-box;
@@ -62,7 +46,8 @@ $secondary-font-condensed: 'Open Sans Condensed', sans-serif;
 .flex {display: flex; flex: 1};
 
 body {
-  font-family: $secondary-font;
+  font-family: $work-sans;
+  color: $brown;
   font-weight: 300;
   font-size: 16px;
 }
@@ -70,9 +55,21 @@ body {
 .md-button {
   text-transform: none;
   font-size: 1.4em;
+  font-family: $space-mono;
   &--sub {
     font-size: 1.2em;
   }
+}
+
+.menu-item {
+  background-color: white;
+  transition: background-color 0.4s ease;
+  &:hover {
+    background-color: $gray;
+  }
+}
+.menu-btn {
+  background-color: inherit;
 }
 
 #skills {
@@ -104,11 +101,11 @@ body {
 
 header {
   height: 400px;
-  background-color: $main;
+  background-color: $tan;
   position: relative;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
   .header-text {
-    font-family: $header-font;
+    font-family: $space-mono;
     font-weight: 400;
     font-size: 5.4em;
     color: white;
@@ -117,10 +114,10 @@ header {
     left: 5vw;
   }
   .header-quote {
-    font-family: $header-font;
+    font-family: $space-mono;
     font-weight: 300;
     font-size: 1.4em;
-    color: white;
+    color: $brown;
     position: absolute;
     top: 5vh;
     right: 4vw;
@@ -138,7 +135,7 @@ header {
 }
 
 .section-heading {
-  font-family: $header-font;
+  font-family: $space-mono;
   font-weight: 300;
   font-size: 2em;
   padding: 0 1em;
