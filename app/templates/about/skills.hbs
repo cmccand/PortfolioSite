@@ -1,0 +1,13 @@
+<div class="layout-row layout-xs-column layout-align-center layout-wrap">
+  {{#each skills as |skill|}}
+    {{#paper-card class="flex-45 flex-grow" as |card|}}
+      {{#card.title as |title|}}
+        {{#title.text as |text|}}
+          {{#text.headline}}{{skill.name}}{{/text.headline}}
+          {{#text.subhead}}{{skill.experience}}{{/text.subhead}}
+        {{/title.text}}
+        {{title.media size="sm" src=skill.img}}
+      {{/card.title}}
+    {{/paper-card}}
+  {{/each}}
+</div>

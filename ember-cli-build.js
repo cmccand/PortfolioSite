@@ -5,7 +5,19 @@ var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     // Add options here
+    sassOptions: {
+      includePaths: [
+        'node_modules',
+        'bower_components/owl.carousel/src/scss/'
+      ]
+    },
   });
+  app.import('bower_components/owl.carousel/src/js/owl.carousel.js');
+  app.import('bower_components/owl.carousel/src/js/owl.autoheight.js');
+  app.import('bower_components/owl.carousel/src/js/owl.navigation.js');
+  app.import('bower_components/owl.carousel/src/scss/owl.carousel.scss');
+    app.import('bower_components/owl.carousel/src/scss/owl.theme.default.scss');
+  app.import('bower_components/owl.carousel/src/scss/owl.autoheight.scss');
 
   // Use `app.import` to add additional libraries to the generated
   // output files.

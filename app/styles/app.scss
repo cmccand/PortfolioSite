@@ -1,0 +1,152 @@
+
+@import "owl.carousel";
+@import "owl.theme.default";
+@import 'ember-paper';
+@import 'colors';
+
+$base-padding: 1em;
+$header-font: 'Josefin Slab', serif;
+$secondary-font: 'Open Sans', sans-serif;
+$secondary-font-condensed: 'Open Sans Condensed', sans-serif;
+
+/* .owl-carousel {
+    margin-bottom: 1em;
+    .owl-stage-outer {
+      .owl-stage {
+        display: block;
+        .owl-item {
+          display:block;
+        }
+        .session__item {
+          text-align: center;
+          display: block;
+          max-height: 350px;
+        }
+        .session__action {
+          left: 50%;
+          transform: translate(-50%, 15px);
+        }
+      }
+    }
+  } */
+.screenshot-card {
+  width: 55%;
+  text-align: center;
+  margin: 0 auto;
+}
+.owl-carousel {
+  .owl-item {
+    img {
+      width: 100%;
+
+    }
+  }
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+.align {
+  &--center {
+    text-align: center;
+    margin: 0 auto;
+  }
+
+  &--left {
+    text-align: left;
+  }
+}
+
+.flex {display: flex; flex: 1};
+
+body {
+  font-family: $secondary-font;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+.md-button {
+  text-transform: none;
+  font-size: 1.4em;
+  &--sub {
+    font-size: 1.2em;
+  }
+}
+
+#skills {
+  align-items: flex-start;
+}
+
+.submenu-item {
+    .md-list-item-inner {
+      padding-left: 36px;
+    }
+  }
+
+  .menu-item, .submenu-item {
+    min-height: 40px;
+
+    &.active, &:hover {
+      background-color: rgba(#fff, .1);
+    }
+
+    .md-list-item-inner {
+      min-height: 40px;
+
+      md-icon {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
+  }
+
+header {
+  height: 400px;
+  background-color: $main;
+  position: relative;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+  .header-text {
+    font-family: $header-font;
+    font-weight: 400;
+    font-size: 5.4em;
+    color: white;
+    position: absolute;
+    bottom: -10px;
+    left: 5vw;
+  }
+  .header-quote {
+    font-family: $header-font;
+    font-weight: 300;
+    font-size: 1.4em;
+    color: white;
+    position: absolute;
+    top: 5vh;
+    right: 4vw;
+    &--attr {
+      position: absolute;
+      right: 30px;
+    }
+  }
+}
+
+.main {
+  background-color: white;
+  width: 100%;
+  height: 100%;
+}
+
+.section-heading {
+  font-family: $header-font;
+  font-weight: 300;
+  font-size: 2em;
+  padding: 0 1em;
+}
+
+.bio-block {
+  padding: 1em 2em;
+  p {
+    font-size: 1.2em;
+  }
+}

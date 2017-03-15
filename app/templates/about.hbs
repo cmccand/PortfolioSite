@@ -1,0 +1,59 @@
+{{#paper-card}}
+  <header class="layout-column">
+    <h4 class="header-quote">'Design and programming are human activities; forget that and all is lost.'
+      <br>
+      <span class="header-quote--attr">- Bjarne Stroustrup</span>
+    </h4>
+
+      <!-- <h4 class="header-quote header-quote--attr">- Bjarne Stroustrup</h4> -->
+    <h1 class="header-text">Chris McCandlish</h1>
+  </header>
+{{/paper-card}}
+
+<main class="main">
+  <div class="layout-row layout-xs-column flex-gt-xs-100 layout-padding">
+
+      <div class="layout-row flex-gt-xs-20 layout-padding">
+        {{#paper-card class="flex-100"}}
+
+          {{#paper-list class="layout-column flex-100"}}
+            {{#paper-item class="md-2-line layout-column"}}
+              {{#paper-button onClick=(action (transition-to 'about.me')) class="layout-column"}}Brief Bio{{/paper-button}}
+            {{/paper-item}}
+            {{#paper-item canExpand=true expanded=subMenuOpen onClick=(queue (transition-to 'about.projects.enterprise') (action (toggle 'subMenuOpen' this))) class="layout-column md-2-line"}}
+              {{#paper-button }}Projects I've Worked On{{/paper-button}}
+            {{/paper-item}}
+            {{#if subMenuOpen}}
+               {{#paper-item onClick=(action (transition-to 'about.projects.enterprise')) class=(concat "submenu-item" (if active ' active') ' md-2-line') }}
+                {{#paper-button class='md-button md-button--sub'}}Enterprise Portal{{/paper-button}}
+               {{/paper-item}}
+               {{#paper-item onClick=(action (transition-to 'about.projects.dev-portal')) class=(concat "submenu-item" (if active ' active') ' md-2-line') }}
+                {{#paper-button class='md-button md-button--sub'}}Developer Portal{{/paper-button}}
+               {{/paper-item}}
+               {{#paper-item onClick=(action (transition-to 'about.projects.my-vinli')) class=(concat "submenu-item" (if active ' active') ' md-2-line') }}
+                {{#paper-button class='md-button md-button--sub'}}My Vinli{{/paper-button}}
+               {{/paper-item}}
+            {{/if}}
+            {{#paper-item class="md-2-line layout-column"}}
+              {{#paper-button onClick=(action (transition-to 'about.skills')) id="skills" class="layout-column"}}Skills{{/paper-button}}
+            {{/paper-item}}
+            {{#paper-item class="md-2-line layout-column"}}
+              {{#paper-button onClick=(action (transition-to 'about.books'))}}Books I'm reading{{/paper-button}}
+            {{/paper-item}}
+            {{#paper-item class="md-2-line layout-column"}}
+              {{#paper-button onClick=(action (transition-to 'about.contact'))}}Contact Me{{/paper-button}}
+            {{/paper-item}}
+
+          {{/paper-list}}
+        {{/paper-card}}
+      </div>
+
+      <div class="layout-row flex-gt-xs-80 layout-padding">
+        <div class="flex-100">
+          {{outlet}}
+        </div>
+      </div>
+
+
+  </div>
+</main>

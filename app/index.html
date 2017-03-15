@@ -3,7 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>PersonalSite</title>
+    <title>Chris McCandlish - Frontend Developer</title>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300,400|Open+Sans+Condensed:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -19,6 +21,23 @@
 
     <script src="{{rootURL}}assets/vendor.js"></script>
     <script src="{{rootURL}}assets/personal-site.js"></script>
+    <script>
+      $(document).ready(function(){
+        $('.owl-carousel').owlCarousel({
+          autoheight: true,
+          autoplay: false,
+          center: true,
+          dots: true,
+          items: 1,
+          loop: false,
+          margin: 8,
+          nav: false,
+          selected: null,
+          stagePadding: 16,
+          startPosition: 1
+        });
+      });
+    </script>
 
     {{content-for "body-footer"}}
   </body>
