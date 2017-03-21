@@ -1,29 +1,198 @@
 
 @import "owl.carousel";
-@import "owl.theme.default";
+// @import "owl.theme.default";
 @import 'ember-paper';
 @import 'colors';
 
 $base-padding: 1em;
-/* $header-font: 'Josefin Slab', serif; */
-/* $secondary-font: 'Open Sans', sans-serif;
-$secondary-font-condensed: 'Open Sans Condensed', sans-serif; */
+$body: 'Roboto', sans-serif;
+$secondary: 'Roboto Mono', monospace;
 $space-mono: 'Space Mono', monospace;
-$asul: 'Asul', sans-serif;
-$work-sans: 'Work-Sans', sans-serif;
+
+@font-face {
+  font-family: 'Moon';
+  src:  url('/assets/fonts/MoonLight.otf'),
+        // url('myfont.woff') format('woff');
+}
 
 
-.screenshot-card {
-  width: 55%;
+.owl-nav {
+font-size: 2em;
+text-align: center;
+-webkit-tap-highlight-color: transparent;
+position: relative;
+top:40%;
+left: 0;
+height:20%;
+width: 100%;
+line-height: 2em;
+z-index: 2;
+  .owl-prev,
+  .owl-next {
+    background-color: $codegreen-lt !important;
+    z-index: 2;
+    i {
+      font-size: 36px;
+      padding-left: 8%;
+      padding-top: 25%;
+      color: white;
+    }
+  }
+  .owl-prev:not([disabled]):hover,
+  .owl-next:not([disabled]):hover {
+    background-color: $codegreen-lt;
+    opacity: .8;
+  }
+  .owl-prev:not([disabled]):focus,
+  .owl-next:not([disabled]):focus {
+    background-color: $codegreen-lt;
+  }
+  .owl-prev.disabled,
+  .owl-next.disabled {
+    background-color: $codegreen-lt;
+    opacity: .2;
+  }
+  .owl-prev {
+    display: inline-block;
+    position: absolute;
+    left: -25%;
+    @media (min-width: 700px) {
+      left: -15%;
+    }
+  },
+  .owl-next {
+    display: inline-block;
+    position: absolute;
+    right: -25%;
+    @media (min-width: 700px) {
+      right: -15%;
+    }
+  }
+}
+
+
+//Menu styles
+
+.md-button {
+  font-size: 1.2em;
+  font-family: $body;
+  font-weight: 500;
+  text-transform: uppercase;
+  text-align: left;
+  color: $codegreen;
+  transition: none;
+  &:focus, &:active {
+    background-color: transparent;
+  }
+  &:active, &:hover {
+    background-color: #D5C8BF;
+  }
+}
+
+.menu-card {
+  background-color: #1A237E;
+  padding: 0;
+  min-width: 400px;
+}
+
+.menu-btn {
+  font-size: 1.1em;
+  padding: 0;
+}
+
+.menu-item {
+  background-color: #1A237E;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 0;
+  align-items: center;
+  // height: 80px;
+  button {
+    font-size: 1.1em;
+    padding: 2em 3em;
+  }
+
+  .md-list-item-inner {
+    font-size: 1.2em;
+    font-family: $secondary;
+    text-transform: uppercase;
+  }
+
+  .expand-icon {
+    position: relative;
+    right: -26px;
+    transition: transform 250ms linear;
+    color: white;
+  }
+
+  &.expanded .expand-icon {
+    transform: rotate(-180deg);
+  }
+}
+
+.submenu-item {
+  padding: 0;
+  button {
+    font-size: 1.1em;
+    padding: 2em 3em;
+  }
+  // height: 80px;
+  .md-list-item-inner {
+    padding: 0 36px;
+    font-family: $secondary;
+    text-transform: uppercase;
+  }
+}
+
+.menu-item, .submenu-item {
+  min-height: 40px;
+
+  &.active, &:hover {
+    .md-list-item-inner {
+      min-height: 40px;
+    }
+  }
+
+
+  .md-list-item-inner {
+    min-height: 40px;
+    font-weight: 400;
+    .menu-btn {
+      &:hover, &:active {
+        background-color: transparent;
+      }
+    }
+    md-icon {
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+}
+//end Menu Styles
+
+.screenshot-wrapper {
   text-align: center;
   margin: 0 auto;
+  .screenshot-card {
+    // width: 100%;
+    text-align: center;
+    margin: 0 auto;
+  }
+}
+
+.carousel-background {
+  margin: 0 auto;
+  padding: 2em;
+  text-align: center;
+  background-color: #B39DDB;
 }
 
 .owl-carousel {
   .owl-item {
     img {
       width: 100%;
-
+      box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
     }
   }
 }
@@ -46,78 +215,54 @@ $work-sans: 'Work-Sans', sans-serif;
 .flex {display: flex; flex: 1};
 
 body {
-  font-family: $work-sans;
-  color: $brown;
+  font-family: $body;
+  color: #66595C;
   font-weight: 300;
   font-size: 16px;
 }
 
-.md-button {
-  text-transform: none;
-  font-size: 1.4em;
-  font-family: $space-mono;
-  &--sub {
-    font-size: 1.2em;
-  }
-}
-
-.menu-item {
-  background-color: white;
-  transition: background-color 0.4s ease;
-  &:hover {
-    background-color: $gray;
-  }
-}
-.menu-btn {
-  background-color: inherit;
-}
 
 #skills {
   align-items: flex-start;
 }
 
-.submenu-item {
-    .md-list-item-inner {
-      padding-left: 36px;
-    }
-  }
-
-  .menu-item, .submenu-item {
-    min-height: 40px;
-
-    &.active, &:hover {
-      background-color: rgba(#fff, .1);
-    }
-
-    .md-list-item-inner {
-      min-height: 40px;
-
-      md-icon {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-    }
-  }
 
 header {
-  height: 400px;
-  background-color: $tan;
+  height: 600px;
+  background-color: $indigo;
   position: relative;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12);
+  .header-headline {
+    text-align: center;
+    margin: 0 auto;
+    padding-top: 18vh;
+  }
   .header-text {
-    font-family: $space-mono;
+    font-family: 'Moon';
+    // transform: rotate(-5deg);
     font-weight: 400;
-    font-size: 5.4em;
+    font-size: 6em;
     color: white;
-    position: absolute;
-    bottom: -10px;
-    left: 5vw;
+    // text-align: center;
+    // margin: 0 auto;
+    // padding-top: 17vh;
+    // top: 50%;
+    letter-spacing: 15px;
+    // position: absolute;
+    // bottom: -10px;
+    // left: 5vw;
+  }
+  .header-subtext {
+    font-family: 'Moon';
+    font-size: 2em;
+    color: $codegreen;
+    letter-spacing: 10px;
   }
   .header-quote {
-    font-family: $space-mono;
+    font-family: $secondary;
     font-weight: 300;
-    font-size: 1.4em;
-    color: $brown;
+    font-size: 1.3em;
+    color: white;
     position: absolute;
     top: 5vh;
     right: 4vw;
@@ -135,15 +280,42 @@ header {
 }
 
 .section-heading {
-  font-family: $space-mono;
-  font-weight: 300;
+  font-family: $body;
+  font-weight: 400;
   font-size: 2em;
-  padding: 0 1em;
+  padding: 5%;
+  padding-top: 6%;
+  margin: 0;
+  background-color: #B39DDB;;
+  color: white;
 }
 
+.bio-card {
+  margin: 0;
+}
 .bio-block {
-  padding: 1em 2em;
+  padding: 5%;
+  padding-top: 0;
+  background-color: #B39DDB;
   p {
-    font-size: 1.2em;
+    font-size: 1.1em;
+    font-weight: 400;
+    color: white;
+  }
+}
+
+.skill-card {
+  background-color: #B39DDB;
+  &__head {
+    font-family: $secondary;
+    font-weight: 300;
+    color: white;
+    padding: .1em;
+  }
+  &__subhead {
+    color: white !important;
+    font-size: 1.1em !important;
+    font-weight: 400 !important;
+    padding: .1em !important;
   }
 }

@@ -6,49 +6,68 @@
     </h4>
 
       <!-- <h4 class="header-quote header-quote--attr">- Bjarne Stroustrup</h4> -->
-    <h1 class="header-text">Chris McCandlish</h1>
+      <div class="header-headline">
+        <h1 class="header-text">Chris McCandlish</h1>
+        <h2 class="header-subtext">Front-End Developer</h2>
+      </div>
+
   </header>
 {{/paper-card}}
 
 <main class="main">
   <div class="layout-row layout-xs-column flex-gt-xs-100 layout-padding">
 
-      <div class="layout-row flex-gt-xs-20 layout-padding">
-        {{#paper-card class="flex-100"}}
+      <div class="layout-column layout-padding">
+        {{#if currentPortal}}
+          {{paper-button mini=true onClick=(queue (log 'hi') (action 'back'))}}
+        {{/if}}
+        {{#paper-card class="menu-card"}}
+          {{#paper-menu}}
+              {{#menu-item onClick=(transition-to 'about.me')}}Bio{{/menu-item}}
 
-          {{#paper-list class="layout-column flex-100"}}
-            {{#paper-item class="md-2-line layout-column menu-item"}}
-              {{#paper-button onClick=(action (transition-to 'about.me')) class="layout-column menu-btn"}}Brief Bio{{/paper-button}}
-            {{/paper-item}}
-            {{#paper-item canExpand=true expanded=subMenuOpen onClick=(queue (transition-to 'about.projects.enterprise') (action (toggle 'subMenuOpen' this))) class="layout-column md-2-line menu-item"}}
-              {{#paper-button class="menu-btn"}}Projects I've Worked On{{/paper-button}}
-            {{/paper-item}}
-            {{#if subMenuOpen}}
-               {{#paper-item onClick=(action (transition-to 'about.projects.enterprise')) class=(concat "submenu-item" (if active ' active') ' md-2-line menu-item') }}
-                {{#paper-button class='md-button md-button--sub menu-btn'}}Enterprise Portal{{/paper-button}}
-               {{/paper-item}}
-               {{#paper-item onClick=(action (transition-to 'about.projects.dev-portal')) class=(concat "submenu-item" (if active ' active') ' md-2-line menu-item') }}
-                {{#paper-button class='md-button md-button--sub menu-btn'}}Developer Portal{{/paper-button}}
-               {{/paper-item}}
-               {{#paper-item onClick=(action (transition-to 'about.projects.my-vinli')) class=(concat "submenu-item" (if active ' active') ' md-2-line menu-item') }}
-                {{#paper-button class='md-button md-button--sub menu-btn'}}My Vinli{{/paper-button}}
-               {{/paper-item}}
-            {{/if}}
-            {{#paper-item class="md-2-line layout-column menu-item"}}
-              {{#paper-button onClick=(action (transition-to 'about.skills')) id="skills" class="layout-column menu-btn"}}Skills{{/paper-button}}
-            {{/paper-item}}
-            {{#paper-item class="md-2-line layout-column menu-item"}}
-              {{#paper-button onClick=(action (transition-to 'about.books')) class="menu-btn"}}Books I'm reading{{/paper-button}}
-            {{/paper-item}}
-            {{#paper-item class="md-2-line layout-column menu-btn__wrapper"}}
-              {{#paper-button onClick=(action (transition-to 'about.contact')) class="menu-btn"}}Contact Me{{/paper-button}}
-            {{/paper-item}}
+              {{#menu-item canExpand=true expanded=subMenuOpen onClick=(queue (toggle 'subMenuOpen' this) (transition-to 'about.projects.enterprise'))}}
+                Projects
+              {{/menu-item}}
+              {{#liquid-if subMenuOpen}}
 
-          {{/paper-list}}
+                 {{#submenu-item active=(is-active "about.projects.enterprise" currentRouteName) onClick=(queue (action 'split' 'enterprise') (transition-to 'about.projects.enterprise'))}}
+                    <!-- {{#if currentPortal}}
+                      {{#paper-button mini=true onClick=(action 'back')}}{{/paper-button}}
+                    {{/if}} -->
+                    Vinli Enterprise Portal
+                 {{/submenu-item}}
+                 {{#submenu-item active=(is-active "about.projects.dev-portal" currentRouteName) onClick=(queue (action 'split' 'dev-portal') (transition-to 'about.projects.dev-portal'))}}
+                   <!-- {{#if currentPortal}}
+                     {{paper-button mini=true bubbles=true onClick=(action 'back')}}
+                   {{/if}} -->
+                    Vinli Developer Portal
+                 {{/submenu-item}}
+                 {{#submenu-item active=(is-active "about.projects.my-vinli" currentRouteName) onClick=(queue (action 'split' 'my-vinli') (transition-to 'about.projects.my-vinli'))}}
+                   <!-- {{#if currentPortal}}
+                     {{paper-button mini=true onClick=(action 'back')}}
+                   {{/if}} -->
+                    My Vinli
+                 {{/submenu-item}}
+              {{/liquid-if}}
+              {{#menu-item onClick=(transition-to 'about.skills')}}
+                Skills
+              {{/menu-item}}
+              {{#menu-item onClick=(transition-to 'about.books')}}
+                What I'm Reading
+              {{/menu-item}}
+              {{#menu-item onClick=(transition-to 'about.contact')}}
+                Contact Me
+              {{/menu-item}}
+
+          {{/paper-menu}}
         {{/paper-card}}
+
+        {{#if currentPortal}}
+          {{enterprise-desc}}
+        {{/if}}
       </div>
 
-      <div class="layout-row flex-gt-xs-80 layout-padding">
+      <div class="layout-row flex-gt-xs-70 layout-padding">
         <div class="flex-100">
           {{outlet}}
         </div>
