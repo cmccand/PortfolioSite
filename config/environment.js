@@ -2,7 +2,7 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'http://cmccand.github.io/portfolioSite',
+    modulePrefix: 'personal-site',
     environment: environment,
     rootURL: '/',
     locationType: 'auto',
