@@ -1,1 +1,68 @@
-{{outlet}}
+{{#paper-card}}
+  <header class="layout-column">
+    <h4 class="header-quote">'Design and programming are human activities; forget that and all is lost.'
+      <br>
+      <span class="header-quote--attr">- Bjarne Stroustrup</span>
+    </h4>
+
+      <!-- <h4 class="header-quote header-quote--attr">- Bjarne Stroustrup</h4> -->
+      <div class="header-headline">
+        <h1 class="header-text">Chris McCandlish</h1>
+        <h2 class="header-subtext">Front-End Developer</h2>
+      </div>
+
+  </header>
+{{/paper-card}}
+
+<main class="main">
+  <div class="layout-row layout-xs-column flex-gt-xs-100 layout-padding">
+
+      <div class="layout-column layout-padding">
+        {{#ember-wormhole renderInPlace='true'}}
+
+          {{#paper-card class="menu-card"}}
+            {{#paper-menu}}
+                {{#menu-item onClick=(transition-to 'me')}}Bio{{/menu-item}}
+
+                {{#menu-item canExpand=true expanded=subMenuOpen onClick=(queue (toggle 'subMenuOpen' this) (transition-to 'projects'))}}
+                  Projects
+                {{/menu-item}}
+                {{#liquid-if subMenuOpen}}
+
+                   {{#submenu-item active=(is-active "projects.enterprise" currentRouteName) onClick=(queue (action 'split' 'enterprise') (transition-to 'projects.enterprise'))}}
+                      Vinli Enterprise Portal
+                   {{/submenu-item}}
+                   {{#submenu-item active=(is-active "projects.dev-portal" currentRouteName) onClick=(queue (action 'split' 'dev-portal') (transition-to 'projects.dev-portal'))}}
+                      Vinli Developer Portal
+                   {{/submenu-item}}
+                   {{#submenu-item active=(is-active "projects.my-vinli" currentRouteName) onClick=(queue (action 'split' 'my-vinli') (transition-to 'projects.my-vinli'))}}
+                      My Vinli
+                   {{/submenu-item}}
+                {{/liquid-if}}
+                {{#menu-item onClick=(transition-to 'skills')}}
+                  Skills
+                {{/menu-item}}
+                {{#menu-item onClick=(transition-to 'contact')}}
+                  Contact Me
+                {{/menu-item}}
+
+            {{/paper-menu}}
+          {{/paper-card}}
+          {{#if currentPortal}}
+            {{#paper-button mini=true onClick=(action 'back' this) class="back"}}
+              {{paper-icon 'keyboard-arrow-left'}}
+            {{/paper-button}}
+          {{/if}}
+
+        {{/ember-wormhole}}
+      </div>
+
+      <div class="layout-row flex-gt-xs-70 layout-padding">
+        <div class="flex-100 layout-padding">
+          {{outlet}}
+        </div>
+      </div>
+
+
+  </div>
+</main>

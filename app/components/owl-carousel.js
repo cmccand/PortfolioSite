@@ -24,7 +24,12 @@ export default Ember.Component.extend({
       navText: [
         "<i class='material-icons md-48'>keyboard_arrow_left</i>",
         "<i class='material-icons md-48'>keyboard_arrow_right</i>"
-      ]
+      ],
+      responsive: {
+        960: {
+          stagePadding: 0
+        }
+      }
     });
 
   },

@@ -19,43 +19,43 @@
 
       <div class="layout-column layout-padding">
         {{#if currentPortal}}
-          {{paper-button mini=true onClick=(queue (log 'hi') (action 'back'))}}
+          {{#paper-button mini=true onClick=(action 'back')}}{{/paper-button}}
         {{/if}}
         {{#paper-card class="menu-card"}}
           {{#paper-menu}}
-              {{#menu-item onClick=(transition-to 'about.me')}}Bio{{/menu-item}}
+              {{#menu-item onClick=(transition-to 'me')}}Bio{{/menu-item}}
 
-              {{#menu-item canExpand=true expanded=subMenuOpen onClick=(queue (toggle 'subMenuOpen' this) (transition-to 'about.projects.enterprise'))}}
+              {{#menu-item canExpand=true expanded=subMenuOpen onClick=(queue (toggle 'subMenuOpen' this) (transition-to 'projects.enterprise'))}}
                 Projects
               {{/menu-item}}
               {{#liquid-if subMenuOpen}}
 
-                 {{#submenu-item active=(is-active "about.projects.enterprise" currentRouteName) onClick=(queue (action 'split' 'enterprise') (transition-to 'about.projects.enterprise'))}}
+                 {{#submenu-item active=(is-active "projects.enterprise" currentRouteName) onClick=(queue (action 'split' 'enterprise') (transition-to 'projects.enterprise'))}}
                     <!-- {{#if currentPortal}}
                       {{#paper-button mini=true onClick=(action 'back')}}{{/paper-button}}
                     {{/if}} -->
                     Vinli Enterprise Portal
                  {{/submenu-item}}
-                 {{#submenu-item active=(is-active "about.projects.dev-portal" currentRouteName) onClick=(queue (action 'split' 'dev-portal') (transition-to 'about.projects.dev-portal'))}}
+                 {{#submenu-item active=(is-active "projects.dev-portal" currentRouteName) onClick=(queue (action 'split' 'dev-portal') (transition-to 'projects.dev-portal'))}}
                    <!-- {{#if currentPortal}}
                      {{paper-button mini=true bubbles=true onClick=(action 'back')}}
                    {{/if}} -->
                     Vinli Developer Portal
                  {{/submenu-item}}
-                 {{#submenu-item active=(is-active "about.projects.my-vinli" currentRouteName) onClick=(queue (action 'split' 'my-vinli') (transition-to 'about.projects.my-vinli'))}}
+                 {{#submenu-item active=(is-active "projects.my-vinli" currentRouteName) onClick=(queue (action 'split' 'my-vinli') (transition-to 'projects.my-vinli'))}}
                    <!-- {{#if currentPortal}}
                      {{paper-button mini=true onClick=(action 'back')}}
                    {{/if}} -->
                     My Vinli
                  {{/submenu-item}}
               {{/liquid-if}}
-              {{#menu-item onClick=(transition-to 'about.skills')}}
+              {{#menu-item onClick=(transition-to 'skills')}}
                 Skills
               {{/menu-item}}
-              {{#menu-item onClick=(transition-to 'about.books')}}
+              {{#menu-item onClick=(transition-to 'books')}}
                 What I'm Reading
               {{/menu-item}}
-              {{#menu-item onClick=(transition-to 'about.contact')}}
+              {{#menu-item onClick=(transition-to 'contact')}}
                 Contact Me
               {{/menu-item}}
 

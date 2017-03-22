@@ -1,0 +1,11 @@
+{{#owl-carousel}}
+  {{#each screenshots as |screenshot|}}
+
+    <div style="screenshot-wrapper">
+      {{#paper-card class="screenshot-card"}}
+        <img class="screenshot" src="{{screenshot.src}}" alt="">
+      {{/paper-card}}
+    </div>
+
+  {{/each}}
+{{/owl-carousel}}
