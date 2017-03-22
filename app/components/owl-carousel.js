@@ -25,11 +25,12 @@ export default Ember.Component.extend({
         "<i class='material-icons md-48'>keyboard_arrow_left</i>",
         "<i class='material-icons md-48'>keyboard_arrow_right</i>"
       ],
-      responsive: {
-        960: {
-          stagePadding: 0
-        }
-      }
+      // responsive: {
+      //   960: {
+      //     items: 1,
+      //     stagePadding: 30
+      //   }
+      // }
     });
 
   },

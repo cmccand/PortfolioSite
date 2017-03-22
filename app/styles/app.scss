@@ -61,11 +61,17 @@ body {
 
 .owl-carousel {
   .owl-item {
+    min-width: 680px;
     img {
       width: 100%;
       box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
     }
   }
+}
+.owl-stage {
+  display: flex;
+  justify-content: space-between;
+  max-height: 500px;
 }
 
 .owl-nav {
@@ -107,18 +113,24 @@ z-index: 2;
   .owl-prev {
     display: inline-block;
     position: absolute;
-    left: -25%;
-    @media (min-width: 960px) and (max-width: 1920px) {
-      left: -6.4%;
+    left: -8%;
+    @media (min-width: 1920px) {
+      left: -3.4%;
+    }
     @media (min-width: 960px) and (max-width: 1275px) {
       left: -7%;
     }
+    @media (min-width: 1275px) and (max-width: 1920px) {
+      left: -6.4%;
     }
   },
   .owl-next {
     display: inline-block;
     position: absolute;
     right: -25%;
+    @media (min-width: 1920px) {
+      right: -10.4%;
+    }
     @media (min-width: 1275px) and (max-width: 1920px) {
       right: -19.4%;
     }
@@ -245,19 +257,33 @@ header {
     text-align: center;
     margin: 0 auto;
     padding-top: 18vh;
-    @media (min-width: 960px) {
-      padding-top: 14%;
+    @media screen and (min-width: 960px) and (max-width: 1400px) {
+      padding-top: 16%;
+      width: 90%;
+    }
+    @media screen and (min-width: 1400px) and (max-width: 1800px) {
+      padding-top: 16%;
+      width: 90%;
+    }
+    @media (min-width: 1800px) {
+      padding-top: 11%;
       width: 85%;
     }
   }
   .header-text {
     font-family: 'Moon';
     font-weight: 400;
-    font-size: 6em;
+    font-size: 5em;
     color: white;
     letter-spacing: 15px;
-    @media (min-width: 960px) {
-      font-size: 5.5em;
+    @media screen and (min-width: 960px) and (max-width: 1400px) {
+      font-size: 4em;
+    }
+    @media screen and (min-width: 1400px) and (max-width: 1800px) {
+      font-size: 5em;
+    }
+    @media (min-width: 1800px) {
+      font-size: 6em;
     }
   }
   .header-subtext {
@@ -287,6 +313,42 @@ header {
   height: 100%;
 }
 
+
+.portal-card {
+  background-color: #B39DDB;
+  min-height: 300px;
+  &__header {
+    font-family: $body;
+    font-weight: 400;
+    font-size: 1.5em;
+    padding: 0 32px;
+    margin: 0;
+    background-color: #B39DDB;;
+    color: white;
+    &--contact {
+      padding: 32px;
+    }
+  }
+  .top-header {
+    padding-top: 32px;
+  }
+  &__description {
+    padding: 0 32px;
+    background-color: #B39DDB;
+    p {
+      font-size: 1em;
+      font-weight: 400;
+      color: white;
+    }
+    &--contact {
+      p {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
+
 .section-heading {
   font-family: $body;
   font-weight: 400;
@@ -309,6 +371,16 @@ header {
     font-size: 1em;
     font-weight: 400;
     color: white;
+  }
+}
+.chris-pic {
+  width: 450px;
+  height: 350px;
+  text-align: center;
+  margin: 0 1em;
+  @media (min-width: 1400px) {
+    width: 580px;
+    height: 430px;
   }
 }
 
