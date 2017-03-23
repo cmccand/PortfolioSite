@@ -2,7 +2,7 @@ import Ember from 'ember';
 const ensureRender= function() {
   Ember.$('.owl-nav').css('visibility', 'visible');
 }
-// const owl = this.$().owlCarousel();
+
 export default Ember.Component.extend({
   classNames: ['owl-carousel'],
   didInsertElement() {
