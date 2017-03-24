@@ -53,46 +53,43 @@
               {{paper-icon 'keyboard-arrow-left'}}
             {{/paper-button}}
             {{#liquid-if (eq currentPortal 'enterprise')}}
-              {{#paper-card class='portal-card'}}
+              <div class="portal-wrapper">
+                  <h3 class='portal-card__header top-header'>Project Description</h3>
+                  <div class='portal-card__description'>
+                    <p>Enterprise Portal is an application for large enterprise organizations to manage their inventory of Vinli devices. The app has three permissioning levels — User, Organization, and Super User — each of which has different levels of access to the application and other organizations and devices.</p>
+                  </div>
+
+                  <h3 class='portal-card__header'>Biggest challenge</h3>
+                  <div class='portal-card__description'>
+                    <p>Ensuring a seamless user experience while managing complex data model relationships between large organizations and users with different permission levels.</p>
+                  </div>
+                </div>
+              {{/liquid-if}}
+              {{#liquid-if (eq currentPortal 'dev-portal')}}
+                <div class="portal-wrapper">
+                  <h3 class='portal-card__header top-header'>Project Description</h3>
+                  <div class='portal-card__description'>
+                    <p>The Vinli Developer Portal is designed for developers to create applications that leverage vehicle and trip data made available through the Vinli platform.</p>
+                  </div>
+
+                  <h3 class='portal-card__header'>Biggest challenge</h3>
+                  <div class='portal-card__description'>
+                    <p>Effectively presenting data from drivers' devices in a way that engages developers to build on the Vinli platform.</p>
+                  </div>
+              </div>
+            {{/liquid-if}}
+            {{#liquid-if (eq currentPortal 'my-vinli')}}
+              <div class="portal-wrapper">
                 <h3 class='portal-card__header top-header'>Project Description</h3>
                 <div class='portal-card__description'>
-                  <p>Enterprise Portal is an application for large enterprise organizations, such as car dealerships, service shops and insurance companies, to manage their inventory of Vinli devices.</p>
-                  <p>The app has three permissioning levels — User, Organization, and Super User — each of which has different levels of access to the application and other organizations and devices.</p>
+                  <p>Vinli customers use My Vinli to purchase Wifi for their vehicles, get feedback on driving habits, diagnose check-engine lights, find the nearest towing service, schedule maintenance or contact loved ones in an emergency.</p>
                 </div>
 
                 <h3 class='portal-card__header'>Biggest challenge</h3>
                 <div class='portal-card__description'>
-                  <p>Ensuring a seamless user experience while managing complex data model relationships between large organizations and users with different permission levels.</p>
+                  <p>Ensuring a smooth onboarding experience after customers buy a Vinli device, and presenting driving, wifi and maintenance data in an engaging way to ensure that customers continue to return to app.</p>
                 </div>
-              {{/paper-card}}
-            {{/liquid-if}}
-            {{#liquid-if (eq currentPortal 'dev-portal')}}
-            {{#paper-card class='portal-card'}}
-              <h3 class='portal-card__header top-header'>Project Description</h3>
-              <div class='portal-card__description'>
-                <p>The Vinli Developer Portal is designed for developers to create applications that leverage vehicle and trip data made available through the Vinli platform.</p>
               </div>
-
-              <h3 class='portal-card__header'>Biggest challenge</h3>
-              <div class='portal-card__description'>
-                <p>Effectively presenting data from drivers' devices in a way that engages developers to build on the Vinli platform.</p>
-              </div>
-
-            {{/paper-card}}
-            {{/liquid-if}}
-            {{#liquid-if (eq currentPortal 'my-vinli')}}
-            {{#paper-card class='portal-card'}}
-              <h3 class='portal-card__header top-header'>Project Description</h3>
-              <div class='portal-card__description'>
-                <p>My Vinli is the main consumer-facing application used by customers after purchasing a Vinli device.</p>
-                <p>Vinli customers use My Vinli to purchase Wifi for their vehicles, get feedback on driving habits, diagnose check-engine lights, find the nearest towing service, schedule maintenance or contact loved ones in an emergency.</p>
-              </div>
-
-              <h3 class='portal-card__header'>Biggest challenge</h3>
-              <div class='portal-card__description'>
-                <p>Ensuring a smooth onboarding experience after customers buy a Vinli device, and presenting driving, wifi and maintenance data in an engaging way to ensure that customers continue to return to app.</p>
-              </div>
-            {{/paper-card}}
             {{/liquid-if}}
           {{/if}}
 
