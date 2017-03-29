@@ -349,6 +349,7 @@ header {
     color: #212121;
     &--contact {
       padding: 32px;
+      font-size: 1.5em;
     }
   }
   .top-header {
@@ -416,4 +417,14 @@ header {
     font-weight: 400 !important;
     padding: .1em !important;
   }
+}
+
+.contact-header {
+  font-size: 2em;
+}
+.email-button {
+  padding: .5em;
+  background-color: #B39DDB !important;
+  color: white !important;
+  text-align: center;
 }

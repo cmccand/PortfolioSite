@@ -15,6 +15,7 @@ Router.map(function() {
   });
   this.route('skills');
   this.route('books');
+  this.route('resume');
   this.route('contact');
 });
 
